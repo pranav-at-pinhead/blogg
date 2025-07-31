@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'sonner';
 import Navbar from './components/Navbar';
@@ -12,6 +12,7 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import { BlogProvider } from './context/BlogContext';
 import { ClerkProvider, SignedIn, SignedOut } from './auth/AuthContext';
+import Contact from './components/Contact';
 export function App() {
   return <ClerkProvider>
       <BlogProvider>
@@ -21,6 +22,7 @@ export function App() {
             <main className="flex-grow">
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/contact" element={<Contact />} />
                 <Route path="/blogs" element={<Blogs />} />
                 <Route path="/blogs/:id" element={<BlogDetail />} />
                 <Route path="/write" element={<>
